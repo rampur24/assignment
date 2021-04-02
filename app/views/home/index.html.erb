@@ -1,0 +1,22 @@
+<h1> User List</h1>
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+     <th>Image</th>
+    <th>Action</th>
+  </tr>
+ <% @userposts.each do |userpost| %>
+    <tr>
+      <td><%= userpost.title %></td>
+      <td><%= userpost.description %></td>
+       <td><%= image_tag userpost.image.url.to_s , width: "40", height: "40"%></td>
+      <td>
+      <%= link_to "Edit", edit_path(userpost) %>,
+      <%= link_to "Destroy", destroy_path(userpost),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "Sign In", sign_in_path %>

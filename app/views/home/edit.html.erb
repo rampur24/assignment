@@ -1,0 +1,23 @@
+ <p>Edit User</p>
+   <%= form_for @userpost, :as => :userpost, :url => update_path, :method => :post do |f| %>
+  <p>
+    <%= f.label 'Title:' %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label 'Description:' %><br/>
+    <%= f.text_field :description %>
+  </p>
+   <p>
+    <%= f.label 'Image:' %><br/>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.submit 'Update' %>&nbsp;&nbsp;&nbsp;
+    <%= f.submit 'Clear Form', :type => 'reset' %>
+  </p>
+<% end %><p>
+  <%= link_to "User Post", new_path %>, 
+   <%= link_to "List User", index_path %>
+</p>

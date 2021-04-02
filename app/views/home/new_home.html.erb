@@ -1,0 +1,22 @@
+ <p>New User post</p>
+<%= form_for @userpost,:url => { :action => "create_home" } do |f|  %>
+
+  <p>
+    <%= f.label 'Title:' %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label 'Description:' %><br/>
+    <%= f.text_area :description %>
+  </p>
+   <p>
+    <%= f.label 'Image:' %><br/>
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.submit 'User Post' %>&nbsp;&nbsp;&nbsp;
+    <%= f.submit 'Clear Form', :type => 'reset' %>
+  </p>
+<% end %>
+<%= link_to "List User", index_path %>
