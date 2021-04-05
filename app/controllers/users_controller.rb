@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     UserMailer.welcome_email(@user).deliver
     session[:user_id] = @user.id
     flash[:notice] = 'Welcome.'
-    redirect_to :root
+    redirect_to :action => 'home_page'
   else
     render :action => "new_user"
   end
