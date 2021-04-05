@@ -1,23 +1,33 @@
- <p>Sign Up</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="csrf-token" content="NY/53KKd2n6C6Q/UDMK07Cw31LRoI69yxR0dUYMMkhHSJ9ZC23/FxU7KfEdynfwd3hw04Gu9lA+LwXUAsZ+irg==" />
+<link rel="stylesheet" media="all" href="/assets/application.debug-00fdfc569a2e511e55cd8c73b321a71ce2de97f2df341b4bc7b286055d52a327.css" data-turbolinks-track="reload" />
+<script src="/packs/js/application-e88c6c3304a15e6886b6.js" data-turbolinks-track="reload"></script>
+
+</head>
+<body>
+<div class="container">
+<h1>Sign Up</h1>
 <%= form_for @user, :as => :user, :url => new_user_path, :method => :put do |f| %>
   <p>
-    <%= f.label 'username:' %><br/>
-    <%= f.text_field :username %>
+    <%= f.label 'Username:' %><br/>
+    <%= f.text_field :username, placeholder: "Enter Username" %>
     <%= show_field_error(@user, :username) %>
   </p>
   <p>
-    <%= f.label 'email:' %><br/>
-    <%= f.text_field :email %>
+    <%= f.label 'Email:' %><br/>
+    <%= f.text_field :email , placeholder: "Enter Email"%>
     <%= show_field_error(@user, :email) %>
   </p>
   <p>
-    <%= f.label 'password:' %><br/>
-    <%= f.password_field :password %>
+    <%= f.label 'Password:' %><br/>
+    <%= f.password_field :password , placeholder: "Enter Password"%>
     <%= show_field_error(@user, :password) %>
   </p>
   <p>
-    <%= f.label 'password confirmation:' %><br/>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label 'Password confirmation:' %><br/>
+    <%= f.password_field :password_confirmation, placeholder: "Enter Password Confirmation"%>
     <%= show_field_error(@user, :password_confirmation) %>
   </p>
   <p>
@@ -25,5 +35,13 @@
     <%= f.submit 'Clear Form', :type => 'reset' %>
   </p>
 <% end %>
-<p><%= link_to "User Post", new_path %>,
-<%= link_to "Sign In", sign_in_path %></p>
+  <div class="container signin">
+  <p>Already have an account?</form>
+  <p><a href="/sign_in">Sign In</a>,
+  <a href="/new">User Post</a></p>
+</p>
+  </div>
+</form>
+
+</body>
+</html>
