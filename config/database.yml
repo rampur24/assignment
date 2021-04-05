@@ -11,7 +11,11 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: ruby-getting-started_development
+  username: postgres
+
+  # The password associated with the postgres role (username).
+  password: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
