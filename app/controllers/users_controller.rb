@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   @user = User.new(user_params)
   if @user.valid?
     @user.save
-    UserMailer.welcome_email(@user).deliver
+    #UserMailer.welcome_email(@user).deliver
     session[:user_id] = @user.id
     flash[:notice] = 'Welcome.'
     redirect_to :action => 'home_page'
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     user.password_reset_token = SecureRandom.urlsafe_base64
     user.password_expires_after = 24.hours.from_now
     user.save
-    UserMailer.reset_password_email(user).deliver
+    #UserMailer.reset_password_email(user).deliver
     flash[:notice] = 'Password instructions have been mailed to you. Please check your inbox.'
     redirect_to :sign_in
   else
